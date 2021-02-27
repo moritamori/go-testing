@@ -12,10 +12,16 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: ${{ matrix.go-version }}
+
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Go vet
+      run: go vet -v ./...
+
     - name: Test
       run: go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+
     - name: upload coverage
       uses: codecov/codecov-action@v1
       with:
