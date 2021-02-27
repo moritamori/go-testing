@@ -1,0 +1,2 @@
+mode: atomic
+github.com/moritamori/go-testing/calc.go:3.34,5.2 1 4
